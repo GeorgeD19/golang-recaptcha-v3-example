@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Golang Recaptcha v3 Example</title>
+</head>
+
+<body>
+    <script>
+        function init() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const reCAPTCHA_site_key = urlParams.get('reCAPTCHA_site_key');
+            if (!reCAPTCHA_site_key) {
+                return console.log('Please pass reCAPTCHA_site_key url parameter.');
+            }
+
+            var script = document.createElement('script');
+            script.onload = function () {
+                grecaptcha.ready(function () {
+                    grecaptcha.execute(reCAPTCHA_site_key, {
+                        action: 'submit'
+                    }).then(function (token) {
+                        const request = new XMLHttpRequest();
+                        request.open("GET", 'http://localhost:3000/' + token);
+                        request.send();
+                    });
+                });
+            }
+            script.src = 'https://www.google.com/recaptcha/api.js?render=' + reCAPTCHA_site_key;
+            document.head.appendChild(script);
+        }
+        init();
+    </script>
+</body>
+
+</html>

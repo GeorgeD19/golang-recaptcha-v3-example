@@ -1,0 +1,21 @@
+{
+  "name": "golang-recaptcha-v3-example",
+  "version": "1.0.0",
+  "description": "An example project where a web app using recaptcha v3 submits a token to a Golang server which is able to authenticate that token.",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgeD19/golang-recaptcha-v3-example.git"
+  },
+  "author": "George Dunlop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeorgeD19/golang-recaptcha-v3-example/issues"
+  },
+  "homepage": "https://github.com/GeorgeD19/golang-recaptcha-v3-example#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
